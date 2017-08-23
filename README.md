@@ -1,5 +1,5 @@
 # urlShorter
-Fullstack Url shrorting service with Django
+Fullstack Url shorting service with Django
 
 
 ### TO DO
