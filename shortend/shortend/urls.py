@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from shorter.views import shorter_redirect_view,shorterBaseView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^view-1/$', shorter_redirect_view),
+    url(r'^view-2/$', shorterBaseView.as_view()),
 ]
