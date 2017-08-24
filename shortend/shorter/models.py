@@ -1,7 +1,9 @@
 from __future__ import unicode_literals
 from django.db import models
-
+from django.conf import settings
 from .utils import code_generator,create_shortcode
+
+maxShortCodeLength = settings.SHORTCODE_MAX_LENGTH
 
 
 class shortUrlManager(models.Manager):
@@ -25,7 +27,7 @@ class shortUrlManager(models.Manager):
 
 class shortUrl(models.Model):
     url = models.CharField(max_length=220, )
-    shortCode = models.CharField(max_length=15, unique = True)
+    shortCode = models.CharField(max_length=maxShortCodeLength, unique = True)
     updated = models.DateTimeField(auto_now=True)
     timeStamp = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
