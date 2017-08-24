@@ -19,6 +19,6 @@ from shorter.views import shorter_redirect_view,shorterBaseView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^view-1/$', shorter_redirect_view),
-    url(r'^view-2/$', shorterBaseView.as_view()),
+    url(r'a/(?P<shortcode>[\w-]+)/$', shorter_redirect_view),
+    url(r'^b/(?P<shortcode>[\w-]+)/$', shorterBaseView.as_view()),
 ]
