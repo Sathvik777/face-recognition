@@ -1,8 +1,14 @@
 # Face Recon
 Fullstack face recognization project
 
+#### REQURIED FRAMEWORKS / MODULES
+* opencv
+* numpy
+* matplotlib
 
-### REQURIED TO DO IT NOW
+
+
+#### REQURIED TO DO IT NOW
 * installation guide
 
 
