@@ -1,4 +1,4 @@
-# urlShorter
+# Face Recon
 Fullstack face recognization project
 
 
