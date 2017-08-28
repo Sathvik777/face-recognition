@@ -1,9 +1,15 @@
 # urlShorter
-Fullstack Url shorting service with Django
+Fullstack face recognization project
+
+
+### REQURIED TO DO IT NOW
+* installation guide
 
 
 ### TO DO
 
-* Use MySql
+* make local training class and create harrcascade files
 * implemenet web interface (Help!!)
-* make redirctions secure
+* update getting attributes
+* implement methods to handle multiple persons
+
