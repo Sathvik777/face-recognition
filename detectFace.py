@@ -31,14 +31,21 @@ class detectFace():
             response = conn.getresponse()
 
             data = response.read().decode('utf-8')
-            if(data is None):
-                 return " "
+            print(data)
             json_obj = json.loads(data)
-            faceIdArray = json_obj[0]
-            faceId = faceIdArray['faceId']
-            self.faceId = faceId
+            if(len(json_obj)>0) :
+
+                print(json_obj)
+                faceIdArray = json_obj[0]
+                faceId = faceIdArray['faceId']
+                self.faceId = faceId
+
+                return faceId
+            else:
+                return " "
+
             conn.close()
-            return faceId
+
         except Exception as e:
             print("[Errno {0}] {1}".format(e.errno, e.strerror))
             return " "

@@ -42,15 +42,20 @@ class findSimilar():
 
                 confidence = faceIdArray['confidence']
                 #get get comapred face ID as attribute
-                if persistedFaceId == "" and confidence > 0.7:
+                if persistedFaceId == "0c0d58c5-fbbf-45f5-a6de-62a3a4405b0c" and confidence > 0.7:
                     print("SATHVIK")
 
                 elif persistedFaceId == " ":
                     print("SEARCHING FOR FACE")
                 else :
                     print("NOT SATHVIK")
+
+                return 1
+
             else :
                 print("LAUNCHING....")
+
+                return 0
 
 
 
