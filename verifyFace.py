@@ -38,7 +38,6 @@ class verifyFace():
       response = conn.getresponse()
       data = response.read()
       json_obj = json.loads(data)
-      print (json_obj)
       if(json_obj is not None) :
         isIdentical = json_obj['isIdentical']
         confidence = json_obj['confidence']

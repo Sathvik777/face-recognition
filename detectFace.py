@@ -31,11 +31,8 @@ class detectFace():
             response = conn.getresponse()
 
             data = response.read().decode('utf-8')
-            print(data)
             json_obj = json.loads(data)
             if(len(json_obj)>0) :
-
-                print(json_obj)
                 faceIdArray = json_obj[0]
                 faceId = faceIdArray['faceId']
                 self.faceId = faceId
