@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from time import sleep
+import datetime,time
 #import matplotlib.pyplot as plt
 
 from verifyFace import verifyFace
@@ -28,8 +28,9 @@ while (cap.isOpened()):
             # NOTE: its img[y: y + h, x: x + w] and *not* img[x: x + w, y: y + h]
             cv2.imwrite('01.png',crop_img)
             cv2.imshow("cropped", crop_img)
-            print(faces)
-        sleep(1)
+            ts = time.time()
+            print(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S'))
+
         vifFace = verifyFace()
         setPrintFlag= vifFace.verifyFaceId()
 

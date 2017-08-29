@@ -1,6 +1,6 @@
 import httplib, urllib, base64, json
 from detectFace import detectFace
-
+import datetime,time
 
 class verifyFace():
   def __init__(self):
@@ -45,14 +45,18 @@ class verifyFace():
         #get get comapred face ID as attribute
         if isIdentical and confidence > 0.7:
             print("SATHVIK")
+
         else :
           print("NOT SATHVIK")
 
+        ts = time.time()
+        print(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S'))
         return 1
 
       else :
         print("SEARCHING FOR FACE")
-
+        ts = time.time()
+        print(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S'))
         return 0
 
       conn.close()
