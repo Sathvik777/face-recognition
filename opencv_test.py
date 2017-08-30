@@ -25,7 +25,7 @@ while (cap.isOpened()):
     if len(faces) >0 and setPrintFlag == 0:
         for (x,y,w,h) in faces:
             #cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
-            crop_img = img[y:y+h+15, x: x + w+15] # Crop from x, y, w, h -> 100, 200, 300, 400
+            crop_img = img[y-40 : y+h+40, x-40 : x + w+40] # Crop from x, y, w, h -> 100, 200, 300, 400
             # NOTE: its img[y: y + h, x: x + w] and *not* img[x: x + w, y: y + h]
             cv2.imwrite('01.png',crop_img)
             cv2.imshow("cropped", crop_img)
