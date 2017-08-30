@@ -13,7 +13,9 @@ class identifyFace():
     self.params = urllib.urlencode({
     })
 
-    self.personsList = { '87b23e0c-41fe-4012-8e18-a5c9d649d8f2': 'Sathvik', 'a07f183e-d2d8-4782-9c09-d847122e81d3': 'Zintis',
+    self.personsList = {
+      '87b23e0c-41fe-4012-8e18-a5c9d649d8f2': 'Sathvik',
+      'a07f183e-d2d8-4782-9c09-d847122e81d3': 'Zintis',
       'fac39ace-374d-4b89-9ba9-190d3ff994ec' : 'Victor'
      }
 
