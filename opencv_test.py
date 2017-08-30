@@ -3,7 +3,8 @@ import numpy as np
 import datetime,time
 #import matplotlib.pyplot as plt
 
-from verifyFace import verifyFace
+from identifyFace import identifyFace
+from detectFace import detectFace
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
@@ -19,7 +20,7 @@ while (cap.isOpened()):
     ret, img = cap.read()
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
-
+    face_list = []
     cv2.imshow('img',img)
     if len(faces) >0 and setPrintFlag == 0:
         for (x,y,w,h) in faces:
@@ -30,9 +31,11 @@ while (cap.isOpened()):
             cv2.imshow("cropped", crop_img)
             ts = time.time()
             print(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S'))
-
-        vifFace = verifyFace()
-        setPrintFlag= vifFace.verifyFaceId()
+            detFac = detectFace()
+            faceId = detFac.generateFaceId()
+        face_list.append(faceId)
+        idFace = identifyFace()
+        setPrintFlag= idFace.identifyFaceIds(face_list)
 
 
     if  len(faces) == 0:
