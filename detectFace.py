@@ -37,10 +37,7 @@ class detectFace():
                 faceId = faceIdArray['faceId']
                 self.faceId = faceId
 
-                return faceId
-            else:
-                return " "
-
+            return faceId
             conn.close()
 
         except Exception as e:
