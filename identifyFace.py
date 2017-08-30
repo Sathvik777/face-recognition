@@ -51,17 +51,21 @@ class identifyFace():
         return 0
 
 
-      print(faces_in_response)
+
       if(len(faces_in_response)>0) :
         face_found = faces_in_response[0]
         personId = face_found['personId']
         confidence = face_found['confidence']
         if personId in self.personsList  and confidence > 0.7:
-
-          print("{1} {0}".format(confidence, self.personsList[personId]))
+          print ("############################################################")
+          print("{1} ############################ {0}".format(confidence, self.personsList[personId]))
+          print ("############################################################")
 
         else :
-          print("NOT found {0} but could be {1}".format(confidence, personId))
+          print ("############################################################")
+          print(" {0} NOT found but could be {1}".format(confidence, personId))
+          print ("############################################################")
+
 
         os.remove("01.png")
 
